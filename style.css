@@ -173,3 +173,28 @@ main article .postContent {
 	vertical-align: middle;
 	margin-right: 15px;
 }
+
+.socialIcons {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+.socialIcons ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.socialIcons ul li a {
+	font-size: 20px;
+	color: #333;
+	display: block;
+	background: #ffffff;
+	padding: 20px;
+	text-align: center;
+	margin-bottom: 10px;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2);
+	transition: background .3s ease-in-out;
+}
+.socialIcons ul li a:hover {
+	background: #f8f8f8;
+}
