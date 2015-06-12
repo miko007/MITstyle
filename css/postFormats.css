@@ -1,0 +1,42 @@
+.postQuote {
+	font-size: xx-large;
+	font-weight: 100;
+	line-height: 2em;
+}
+.postQuote:before, .postQuote:after {
+	color: #ccc;
+	font-size: 2em;
+	font-family: FontAwesome;
+}
+.postQuote:before {
+	content:"\f10d";
+}
+.postQuote:after {
+	content:"\f10e";
+	text-align: right;
+	display: block;
+}
+p.whoSaid {
+	font-size: large;
+	font-weight: 100;
+}
+p.quoteAuthor {
+	margin-top: 50px;
+	text-align: right;
+	color: #888;
+}
+
+.postImage {
+	padding-top: 50px;
+}
+.postImage img {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+.postImage h3 {
+	font-family: "Oswald", sans-serif;
+	font-size: xx-large;
+	font-weight: 100;
+	text-align: center;
+}

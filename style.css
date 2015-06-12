@@ -17,6 +17,7 @@ Tags: black, white, sidebar, full-width, responsive, open source, free
 
 @import url(css/font-awesome.min.css);
 @import url(css/wordpressCore.css);
+@import url(css/postFormats.css);
 
 a {
 	text-decoration: none;
@@ -137,6 +138,7 @@ main article h2 {
 	font-size: 56px;
 	margin: 0;
 	text-align: center;
+	transition: font-size .3s ease-in-out;
 }
 main article h2 a {
 	color: #333;
@@ -151,9 +153,29 @@ main article p.postDetails {
 	font-weight: 400;
 	text-align: center;
 	margin: 10px 0 40px;
+	transition: font-size .3s ease-in-out;
 }
 main article .postContent {
 	line-height: 24px;
+}
+
+.postAuthor {
+	padding: 20px;
+	background: #f5f5f5;
+	border: solid 1px #ddd;
+}
+.postAuthor img {
+	float: left;
+	width: 128px;
+	margin: 0 25px 50px 0;
+}
+.postAuthor h3 {
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	margin: 0 0 10px;
+	padding: 0;
+	font-size: xx-large;
 }
 
 .post-container {
@@ -172,6 +194,20 @@ main article .postContent {
 	color: #ccc;
 	vertical-align: middle;
 	margin-right: 15px;
+}
+
+.postCategories {
+	border-top: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	padding: 30px 0 30px;
+	font-size: large;
+	margin: 25px 0;
+}
+.postCategories a {
+	color: #888;
+}
+.postCategories a:hover {
+	color: #be171c;
 }
 
 .socialIcons {
@@ -197,4 +233,35 @@ main article .postContent {
 }
 .socialIcons ul li a:hover {
 	background: #f8f8f8;
+}
+
+@media screen and (max-width: 768px) {
+	body main article h2 {
+		font-size: 42px;
+	}
+
+	body main article p.postDetails {
+		font-size: 18px;
+	}
+
+	body main {
+		margin: 0 5%;
+	}
+
+	body .socialIcons {
+		position: static;
+	}
+	body .socialIcons ul {
+		text-align: center;
+	}
+	body .socialIcons ul li {
+		display: inline;
+	}
+	body .socialIcons ul li a {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	body .socialIcons ul li:last-child a {
+		margin-right: 0;
+	}
 }
