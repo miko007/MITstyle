@@ -11,8 +11,8 @@
 <body>
 
 <header>
-	<h1 class="title"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"> Michael Ochmann – MikO</h1>
-	<h2 class="subtitle">tech . software . nerdism . crap</h2>
+	<h1 class="title"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"> <?php echo get_bloginfo('title'); ?></h1>
+	<h2 class="subtitle"><?php echo get_bloginfo('description'); ?></h2>
 	<nav>
 		<?php
 		wp_nav_menu(array(
