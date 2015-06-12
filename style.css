@@ -15,14 +15,47 @@ Tags: black, white, sidebar, full-width, responsive, open source, free
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
 
+@import url(css/font-awesome.min.css);
+@import url(css/wordpressCore.css);
+
 a {
 	text-decoration: none;
 	outline: 0;
+	color: #be171c;
+	transition: color .2s ease-in-out;
+}
+a:hover {
+	color: #8d1718;
+}
+
+blockquote {
+	position: relative;
+	background: #f7f7f7;
+	padding: 20px 50px;
+}
+blockquote:before, blockquote:after {
+	content: '"';
+	color: #ccc;
+	font-family: 'Oswald', sans-serif;
+	font-size: 70px;
+	line-height: 70px;
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+blockquote:after {
+	height: 22px;
+	top: auto;
+	left: auto;
+	right: 5px;
+	bottom: 5px;
 }
 
 body {
 	margin: 0;
 	padding: 0;
+	color: #333;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -57,6 +90,7 @@ h2.subtitle {
 header {
 	box-shadow: 0 0 5px rgba(0,0,0,0.2);
 	padding: 0 10% 8px 10%;
+	margin-bottom: 80px;
 }
 header nav {
 	margin-top: 10px;
@@ -81,7 +115,7 @@ header nav ul li a {
 	font-size: 14px;
 	transition: color .2s ease-in-out;
 }
-header nav ul li a:hover, header nav ul li a.active {
+header nav ul li a:hover, header nav ul li a.active, header nav ul li.current_page_item a {
 	color: #000000;
 }
 
@@ -92,7 +126,9 @@ main {
 main article {
 	box-shadow: 0 0 5px rgba(0,0,0,0.2);
 	box-sizing: border-box;
-	padding: 50px;
+	padding: 20px 50px;
+	position: relative;
+	margin-bottom: 70px;
 }
 main article h2 {
 	font-family: 'Oswald', sans-serif;
@@ -101,4 +137,39 @@ main article h2 {
 	font-size: 56px;
 	margin: 0;
 	text-align: center;
+}
+main article h2 a {
+	color: #333;
+	transition: color .2s ease-in-out;
+}
+main article h2 a:hover {
+	color: #000000;
+}
+main article p.postDetails {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 400;
+	text-align: center;
+	margin: 10px 0 40px;
+}
+main article .postContent {
+	line-height: 24px;
+}
+
+.post-container {
+	position: relative;
+}
+
+.postComment {
+	font-weight: bold;
+	border-top: solid 1px #ccc;
+	padding: 12px;
+	margin-top: 50px;
+	min-height: 100px;
+}
+.postComment .fa {
+	font-size: xx-large;
+	color: #ccc;
+	vertical-align: middle;
+	margin-right: 15px;
 }
