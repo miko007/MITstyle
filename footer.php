@@ -6,10 +6,12 @@
 </footer>
 <nav class="socialIcons">
 	<ul>
-		<li><a href="http://facebook.com" class="fa fa-facebook"></a></li>
-		<li><a href="http://facebook.com" class="fa fa-twitter"></a></li>
-		<li><a href="http://facebook.com" class="fa fa-youtube"></a></li>
-		<li><a href="http://facebook.com" class="fa fa-rss"></a></li>
+<?php
+$socials = \mitstyle\Theme::getSocial();
+foreach ($socials as $social) {
+	echo "\t\t<li><a href='$social->link' class='fa $social->fontawesome'></a></li>\n";
+}
+?>
 	</ul>
 </nav>
 </body>

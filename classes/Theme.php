@@ -3,7 +3,10 @@
 namespace mitstyle;
 
 class Theme {
+	private $ADMIN;
+
 	public function __construct() {
+		$this->ADMIN = new Admin();
 		add_action('after_setup_theme',	array($this, 'generalSetup'));
 	}
 
@@ -18,5 +21,17 @@ class Theme {
 			'aside'
 		));
 		register_nav_menu('top', 'Hauptmenü');
+	}
+
+	public static function getSocial() {
+		return json_decode(base64_decode(get_option("MITsocial")));
+	}
+
+	public static function getSocialArray() {
+		$out = array();
+		foreach (Theme::getSocial() as $social) {
+			$out[$social->name] = $social->link;
+		}
+		return $out;
 	}
 }

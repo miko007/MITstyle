@@ -1,0 +1,17 @@
+[
+	{
+		"name"			: "facebook",
+		"displayName"	: "Facebook",
+		"fontawesome"	: "fa-facebook"
+	},
+	{
+		"name"			: "twitter",
+		"displayName"	: "Twitter",
+		"fontawesome"	: "fa-twitter"
+	},
+	{
+		"name"			: "youtube",
+		"displayName"	: "YouTube",
+		"fontawesome"	: "fa-youtube"
+	}
+]
