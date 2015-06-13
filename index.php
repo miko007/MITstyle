@@ -16,8 +16,14 @@ if (have_posts()) {
 		$content = ob_get_clean();
 		$customPost = new \mitstyle\Post($post, $content);
 		$customPost->render();
+
 	}
 }
+
+paginate_links();
+/*
+next_post_link("ältere Beiträge");
+previous_post_link("neuere Beiträge");*/
 
 echo "</main>";
 

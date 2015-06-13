@@ -23,6 +23,13 @@ class Theme {
 		register_nav_menu('top', 'Hauptmenü');
 	}
 
+	public static function getColorScheme() {
+		//$schemeActive 	= get_option("MITcolorScheme");
+		$schemes 		= json_decode(file_get_contents(MITSTYLE_PATH."/json/colorSchemes.json"));
+		//return $schemes->$schemeActive;
+		return $schemes->default;
+	}
+
 	public static function getSocial() {
 		return json_decode(base64_decode(get_option("MITsocial")));
 	}

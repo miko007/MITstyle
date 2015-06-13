@@ -26,11 +26,12 @@ if (have_posts()) {
 		ob_start();
 		the_content();
 		$content = ob_get_clean();
-		$customContent = new \mitstyle\Post($post, $content);
+		$postC	= new \mitstyle\Post($post, $content);
+		$customContent = get_post_format($post->ID) ? $postC->render(false) : $content;
 		$post = new \mitstyle\Template("post-single.php");
 		$post->setValues(array(
 			'title'			=> $title,
-			'content'		=> $customContent->render(false),
+			'content'		=> $customContent,
 			'date'			=> $date,
 			'permalink'		=> $permalink,
 			'cat'			=> $categories,

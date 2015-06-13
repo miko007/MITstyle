@@ -20,8 +20,13 @@ class Admin {
 	}
 
 	public function addStyles() {
+		wp_enqueue_media();
+		wp_register_style('MITadmin', get_template_directory_uri().'/css/admin.css', false, '0.0.1' );
 		wp_register_style('toggles', get_template_directory_uri().'/css/toggles.css', false, '0.0.1' );
+		wp_register_script('MITstyle', get_template_directory_uri().'/javascript/MITstyle.js', false, '0.0.1');
 		wp_enqueue_style('toggles');
+		wp_enqueue_script('MITstyle');
+		wp_enqueue_style('MITadmin');
 	}
 
 	public function drawOptionsPage() {
@@ -53,7 +58,7 @@ class Admin {
 	private function process($which) {
 		switch ($which) {
 			case "social":
-				$socials = json_decode(file_get_contents(MITSTYLE_PATH."/socialIcons.json"));
+				$socials = json_decode(file_get_contents(MITSTYLE_PATH."/json/socialIcons.json"));
 				$MITsocial = array();
 				foreach ($socials as $social) {
 					if ($_POST["MIT".$social->name] == "")
@@ -74,13 +79,14 @@ class Admin {
 	}
 
 	private function tabStart() {
-		return "loool";
+		$template = new Template("admin-general.php");
+		return $template->render(false);
 	}
 
 	private function tabSocial() {
 		if (isset($_POST["MITprocess"]))
 			$this->process($_POST["MITprocess"]);
-		$socials 	= json_decode(file_get_contents(MITSTYLE_PATH."/socialIcons.json"));
+		$socials 	= json_decode(file_get_contents(MITSTYLE_PATH."/json/socialIcons.json"));
 
 		$socialRows	= "";
 		$socialLinks = Theme::getSocialArray();

@@ -11,6 +11,8 @@ $socials = \mitstyle\Theme::getSocial();
 foreach ($socials as $social) {
 	echo "\t\t<li><a href='$social->link' class='fa $social->fontawesome'></a></li>\n";
 }
+if (get_option("MITrss"))
+	echo "\t\t<li><a href='".get_bloginfo("url")."/feed' class='fa fa-rss'></a></li>\n";
 ?>
 	</ul>
 </nav>

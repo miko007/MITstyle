@@ -1,0 +1,22 @@
+{
+	"default": {
+		"color"				: "white",
+		"background"		: "white",
+		"headerColor"		: "#222",
+		"headerBackground"	: "transparent",
+		"footerBackground"	: "#f2f2f2",
+		"footerColor"		: "#333",
+		"linkColor"			: "#be171c",
+		"linkHoverColor"	: "#8d1718"
+	},
+	"informatikBlau": {
+		"color"				: "#333",
+		"background"		: "#ddd",
+		"headerColor"		: "#003F87",
+		"headerBackground"	: "#eee",
+		"footerBackground"	: "#f2f2f2",
+		"footerColor"		: "#333",
+		"linkColor"			: "#003F87",
+		"linkHoverColor"	: "#002b56"
+	}
+}
