@@ -7,9 +7,7 @@
 		<section class="postContent">
 			{{content}}
 		</section>
-		<section class="postCategories">
-			Dieser Beitrag wurde in {{cat}} gepostet.
-		</section>
+		{{categories}}
 		<section class="postAuthor">
 			<img src="{{avatar}}" alt="{{authorName}}">
 			<h3>{{authorName}}</h3>

@@ -29,12 +29,21 @@ if (have_posts()) {
 		$postC	= new \mitstyle\Post($post, $content);
 		$customContent = get_post_format($post->ID) ? $postC->render(false) : $content;
 		$post = new \mitstyle\Template("post-single.php");
+		if ($categories != "") {
+			$catOutput = new \mitstyle\Template("post-sub-categories.php");
+			$catOutput->setValues(array(
+				'cat'	=> $categories
+			));
+			$categories = $catOutput->render(false);
+		}
+		else
+			$categories = "";
 		$post->setValues(array(
 			'title'			=> $title,
 			'content'		=> $customContent,
 			'date'			=> $date,
 			'permalink'		=> $permalink,
-			'cat'			=> $categories,
+			'categories'	=> $categories,
 			'authorName'	=> get_the_author_meta('display_name'),
 			'homepage'		=> get_the_author_meta('user_url'),
 			'bio'			=> get_the_author_meta('description'),
