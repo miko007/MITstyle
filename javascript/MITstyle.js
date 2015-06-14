@@ -19,6 +19,12 @@ jQuery(document).ready(function($){
 		return false;
 	});
 
+	$('#MITremoveLogo').click(function(e) {
+		e.preventDefault();
+		$('#MITlogoField').val("");
+		$("#MITlogo").html($("#MITlogo").attr("rel"));
+	});
+
 	$('.add_media').on('click', function(){
 		_custom_media = false;
 	});

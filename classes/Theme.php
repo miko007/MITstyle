@@ -23,6 +23,10 @@ class Theme {
 		register_nav_menu('top', 'Hauptmenü');
 	}
 
+	public static function getColorSchemes() {
+		return json_decode(file_get_contents(MITSTYLE_PATH."/json/colorSchemes.json"));
+	}
+
 	public static function getColorScheme() {
 		//$schemeActive 	= get_option("MITcolorScheme");
 		$schemes 		= json_decode(file_get_contents(MITSTYLE_PATH."/json/colorSchemes.json"));
@@ -40,5 +44,10 @@ class Theme {
 			$out[$social->name] = $social->link;
 		}
 		return $out;
+	}
+
+	public static function getLogo() {
+		$logo = get_option("MITlogo");
+		return $logo == "" ? "" : "<img src='$logo' alt='".get_bloginfo("title")."'>";
 	}
 }

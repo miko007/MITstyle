@@ -57,6 +57,9 @@ class Admin {
 
 	private function process($which) {
 		switch ($which) {
+			case "start":
+				update_option("MITlogo", $_POST["MITlogoURL"]);
+				break;
 			case "social":
 				$socials = json_decode(file_get_contents(MITSTYLE_PATH."/json/socialIcons.json"));
 				$MITsocial = array();
@@ -79,7 +82,21 @@ class Admin {
 	}
 
 	private function tabStart() {
+		if (isset($_POST["MITprocess"]))
+			$this->process($_POST["MITprocess"]);
+		$schemes = get_object_vars(Theme::getColorSchemes());
+		$schemesList = "";
+		foreach (array_keys($schemes) as $scheme) {
+			$schemesList .= "\t\t<option value='$scheme'>$scheme</option>\n";
+		}
+		$logoURL = get_option("MITlogo");
+		$logoDisplay = $logoURL == "" ? "kein Logo ausgewählt" : "<img src='$logoURL'>";
 		$template = new Template("admin-general.php");
+		$template->setValues(array(
+			'schemesList'	=> $schemesList,
+			'logoURL'		=> $logoURL,
+			'logoDisplay'	=> $logoDisplay
+		));
 		return $template->render(false);
 	}
 
