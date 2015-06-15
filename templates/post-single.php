@@ -22,6 +22,7 @@
 			</p>
 		</section>
 		<section class="MITcomments">
+			{{comments}}
 			{{commentForm}}
 		</section>
 	</article>

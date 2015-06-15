@@ -29,6 +29,12 @@ if (have_posts()) {
 		ob_start();
 		comment_form();
 		$commentForm = ob_get_clean();
+		$comments = wp_list_comments(array(
+			'echo' 			=> false,
+			'avatar_size'	=> '80'
+		), get_comments(array(
+			'post_id'	=> $post->ID
+		)));
 		$postC	= new \mitstyle\Post($post, $content);
 		$customContent = get_post_format($post->ID) ? $postC->render(false) : $content;
 		$post = new \mitstyle\Template("post-single.php");
@@ -52,7 +58,8 @@ if (have_posts()) {
 			'bio'			=> get_the_author_meta('description'),
 			'url'			=> get_author_posts_url(get_the_author_meta('ID')),
 			'avatar'		=> get_avatar_url(get_the_author_meta('ID')),
-			'commentForm'	=> $commentForm
+			'commentForm'	=> $commentForm,
+			'comments'		=> $comments
 		));
 		$post->render();
 	}
