@@ -2,6 +2,7 @@
 	font-size: xx-large;
 	font-weight: 100;
 	line-height: 2em;
+	color: #111;
 }
 .postQuote:before, .postQuote:after {
 	color: #ccc;

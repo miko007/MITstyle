@@ -21,5 +21,8 @@
 				<a href="{{url}}">mehr von diesem Autor</a>
 			</p>
 		</section>
+		<section class="MITcomments">
+			{{commentForm}}
+		</section>
 	</article>
 </section>
