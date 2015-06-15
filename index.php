@@ -21,9 +21,11 @@ if (have_posts()) {
 }
 
 paginate_links();
-/*
-next_post_link("ältere Beiträge");
-previous_post_link("neuere Beiträge");*/
+
+echo "<section class='pagination'>";
+next_posts_link("&laquo; ältere Beiträge", 0);
+previous_posts_link("neuere Beiträge &raquo;");
+echo "</section><div style='clear: both;'></div>";
 
 echo "</main>";
 

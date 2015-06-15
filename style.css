@@ -243,6 +243,20 @@ main article .postContent {
 	margin-top: 80px;
 }
 
+.pagination {
+	padding: 20px 0;
+	position: relative;
+}
+.pagination a {
+	font-family: 'Oswald', sans-serif;
+	color: #333;
+	font-size: x-large;
+}
+.pagination a:nth-child(2) {
+	position: absolute;
+	right: 0;
+}
+
 .postAuthor, .MITcomments {
 	padding: 20px;
 	background: #f9f9f9;
@@ -317,6 +331,15 @@ main article .postContent {
 }
 .socialIcons ul li a:hover {
 	background: #f8f8f8;
+}
+
+.widgetTitle {
+	margin-top: 0;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	font-size: 1.8em;
+	letter-spacing: 1px;
+	font-weight: 400;
 }
 
 @media screen and (max-width: 768px) {

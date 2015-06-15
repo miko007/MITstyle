@@ -8,6 +8,7 @@ class Theme {
 	public function __construct() {
 		$this->ADMIN = new Admin();
 		add_action('after_setup_theme',	array($this, 'generalSetup'));
+		add_action('widgets_init', 		array($this, 'addWidgets'));
 	}
 
 	public function generalSetup() {
@@ -21,6 +22,18 @@ class Theme {
 			'aside'
 		));
 		register_nav_menu('top', 'Hauptmenü');
+	}
+
+	public function addWidgets() {
+		register_sidebar(array(
+			'name'          => 'After Posts',
+			'id'            => 'after_posts',
+			'before_widget' => "<section class='primary-sidebar-widget'><section class='widget-container'>",
+			'after_widget'  => '</section></section>',
+			'class'			=> 'MITwidgets',
+			'before_title'  => '<h3 class="widgetTitle">',
+			'after_title'   => '</h3>'
+		));
 	}
 
 	public static function getColorSchemes() {

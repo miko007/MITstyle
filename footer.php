@@ -1,3 +1,6 @@
+<main>
+	<?php dynamic_sidebar('after-posts'); ?>
+</main>
 <?php
 	wp_footer();
 ?>
