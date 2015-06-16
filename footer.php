@@ -1,3 +1,4 @@
+</main>
 <main>
 	<?php dynamic_sidebar('after-posts'); ?>
 </main>

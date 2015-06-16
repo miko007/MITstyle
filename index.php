@@ -6,8 +6,6 @@
  */
 get_header();
 
-echo "<main>";
-
 if (have_posts()) {
 	while (have_posts()) {
 		the_post();
@@ -26,7 +24,5 @@ echo "<section class='pagination'>";
 next_posts_link("&laquo; ältere Beiträge", 0);
 previous_posts_link("neuere Beiträge &raquo;");
 echo "</section><div style='clear: both;'></div>";
-
-echo "</main>";
 
 get_footer();

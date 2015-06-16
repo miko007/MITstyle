@@ -6,8 +6,6 @@
  */
 get_header();
 
-echo "<main>";
-
 if (have_posts()) {
 	while (have_posts()) {
 		the_post();
@@ -64,7 +62,5 @@ if (have_posts()) {
 		$post->render();
 	}
 }
-
-echo "</main>";
 
 get_footer();
